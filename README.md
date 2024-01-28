@@ -1,4 +1,4 @@
-# -Kodlama-IO-Java-Kamp
+# Kodlama-IO-Java-Kamp
 
 Ödev 3
 kodlama.io web sitesinin ana sayfasında bulunan eğitmen, kategori ve kurs bölümlerini katmanlı mimaride kodlamak istiyoruz.
