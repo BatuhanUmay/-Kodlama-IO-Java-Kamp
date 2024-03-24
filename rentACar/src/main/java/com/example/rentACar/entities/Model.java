@@ -1,6 +1,5 @@
 package com.example.rentACar.entities;
 
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,11 +8,11 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 @Entity
-@Table(name = "brands")
+@Table(name = "models")
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Brand {
+public class Model {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,7 +22,10 @@ public class Brand {
     @Column(name = "name")
     private String name;
 
-    @OneToMany(mappedBy = "brand")
-    List<Model> models;
+    @ManyToOne
+    @JoinColumn(name = "brand_id")
+    private Brand brand;
 
+    @OneToMany(mappedBy = "model")
+    private List<Car> cars;
 }
